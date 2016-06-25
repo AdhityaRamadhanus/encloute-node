@@ -21,13 +21,21 @@ Usage
 -----
 
 ```js
-var encloutApi = require('./enclout')('Your Api Key')
-// We Return Promise (y)
-encloutApi.getStem('Fish in the world').then(console.log)
+var encloutApi = require('enclout-node')
+// Yes we return promises (y)
+encloutApi.stemming('Fishing in the world').then(console.log).catch(function (err) {
+  console.log('Got Error , ' + err)
+})
 /*{ text: 'Fish in the world',
   porter_stem: 'Fish in the world',
   uea_stem: 'Fish in the world',
   snowball_stem: 'Fish in the world' }*/
+encloutApi.termAnalysis('Fishing in the world').then(console.log).catch(function (err) {
+  console.log('Got Error , ' + err)
+})
+
+/*{ text: 'Fishing in the world',
+  lemma_text: ' fish in the world' }*/
 ```
 
 License
