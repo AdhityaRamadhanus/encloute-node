@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/AdhityaRamadhanus/curryjs.svg?branch=master)](https://travis-ci.org/AdhityaRamadhanus/curryjs)
+[![Build Status](https://travis-ci.org/AdhityaRamadhanus/encloute-node.svg?branch=master)](https://travis-ci.org/AdhityaRamadhanus/encloute-node)
 
 <h1>Enclout-Node</h1>
 
@@ -15,7 +15,7 @@
 Installation
 ------------
 
-`to be added soon`
+`npm install enclout-node`
 
 Usage
 -----

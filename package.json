@@ -1,14 +1,21 @@
 {
   "name": "enclout-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "(unofficial) Enclout Language Processing API Module for NodeJs",
   "main": "enclout.js",
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha --timeout 15000"
   },
-  "keywords": [],
+  "keywords": [
+    "Enclout",
+    "Stemmer",
+    "Term Analysis",
+    "Nodejs",
+    "Language Processing"
+  ],
   "author": "Adhitya Ramadhanus",
-  "license": "ISC",
+  "email": "adhitya.ramadhanus@gmail.com",
+  "license": "MIT",
   "dependencies": {
     "curryjs": "^0.1.0",
     "request": "^2.72.0"
