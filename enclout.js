@@ -3,8 +3,9 @@ var curryJs = require('curryjs')
 var request = require('request')
 var urlHelper = require('./helper/encloutHelper')
 
-function getStem (authKey, text) {
-  var url = urlHelper.buildStemUrl(text, authKey)
+function genericApiCall (authKey, urlBuilder, text) {
+  var url = urlBuilder(text, authKey)
+  //console.log(url)
   var promise = new Promise(function (resolve, reject) {
     request(url, function (err, resp, body) {
       if (err){
@@ -13,13 +14,15 @@ function getStem (authKey, text) {
       else if (resp.status == 404 || resp.status == 503 || resp.status == 500){
         reject(new Error('Status Code not 200'))
       }
-      resolve(JSON.parse(body))
+      else resolve(JSON.parse(body))
     })
   })
   return promise
 }
+
 module.exports = function (authKey) {
   return {
-    getStem : curryJs(getStem)(authKey)
+    stemming: curryJs(genericApiCall)(authKey)(urlHelper.buildStemUrl),
+    termAnalysis: curryJs(genericApiCall)(authKey)(urlHelper.buildTermUrl)
   }
 }
